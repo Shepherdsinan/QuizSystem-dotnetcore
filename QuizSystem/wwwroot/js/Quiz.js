@@ -45,7 +45,7 @@ function loadDataTable() {
                     return `<div class="text-center">
                         <a class="btn btn-danger text-white" style="cursor:pointer; width: 120px;"
                             onclick=Delete('quiz/Delete?id=${data}')>
-                            Delete
+                            Sil
                         </a>
                     </div>`;
                 },
@@ -121,13 +121,13 @@ function answerOnClick(questionIndex, answer) {
 function CompleteQuiz() {
     var elemList = document.getElementsByClassName("btn-warning");
 
-    if (elemList.length != 8) {
+    if (elemList.length != 40) {
         toastr.error("Lütfen tüm soruların çözüldüğünden emin olun!");
 
         return;
     }
 
-    for (var i=7; i>=0; i--) {
+    for (var i=39; i>=0; i--) {
         var correctAnswer = document.getElementById('correct+' + i).value;
         var givenAnswer = elemList[i].getAttribute("for");
 

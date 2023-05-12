@@ -6,7 +6,7 @@
 <br />
 
 <div class="text-center">
-    <h1 class="display-4">Create Your Quiz</h1>
+    <h1 class="display-4">Test Oluştur</h1>
 </div>
 
 <br />
@@ -28,7 +28,7 @@
         <div class="col-8">
             @Html.DropDownListFor(m => m.SelectedArticleId,
                                     new SelectList(Model.ArticleList, "ArticleId", "Title"),
-                                    "-- Select Article --",
+                                    "-- Seçiniz --",
                                     new { @class = "form-control", @id = "articleDropDown" })
 
         </div>

@@ -43,7 +43,7 @@ namespace QuizPortal.Controllers
 
             if (await userRepository.UserExistsAsync(userDto.Username))
             {
-                return Json(new { success = false, message = $"User Already Exists: {userDto.Username}" });
+                return Json(new { success = false, message = $"Bu kullanıcı mevcut: {userDto.Username}" });
             }
 
             User user = _mapper.Map<User>(userDto);
@@ -51,7 +51,7 @@ namespace QuizPortal.Controllers
             await userRepository.CreateUserAsync(user);
             await _repositoryFactory.SaveAsync();
 
-            return Json(new { success = true, message = "Register successful", url = Url.Action("Login", "User") });
+            return Json(new { success = true, message = "Kayıt Başarılı", url = Url.Action("Login", "User") });
         }
 
         [HttpPost]
@@ -66,14 +66,14 @@ namespace QuizPortal.Controllers
 
             if (!await userRepository.UserExistsAsync(userDto.Username, userDto.Password))
             {
-                return Json(new { success = false, message = "Username or password is incorrect" });
+                return Json(new { success = false, message = "Kullanıcı adı veya şifre hatalı" });
             }
 
             var userFromDb = await userRepository.GetUserAsync(userDto.Username);
 
             HttpContext.Session.SetString(Constants.SessionUserId, userFromDb.Id.ToString());
 
-            return Json(new { success = true, message = "Login successful", url = Url.Action("Index", "Home") });
+            return Json(new { success = true, message = "Giriş Başarılı", url = Url.Action("Index", "Home") });
         }
 
         [HttpGet]

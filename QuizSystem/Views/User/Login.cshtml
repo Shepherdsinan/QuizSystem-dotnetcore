@@ -7,7 +7,7 @@
 
 <div class="col-8 offset-2">
     <br />
-    <h2 class="text-info" style="text-align:center;">LOGIN</h2>
+    <h2 class="text-info" style="text-align:center;">Giriş Yap</h2>
     <br />
 
     <div class="border container bg-light" style="padding:30px; border-radius:20px;">
@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="col-8">
-                    <input asp-for="Username" placeholder="Enter username" class="form-control" />
+                    <input asp-for="Username" placeholder="Kullanıcı adı" class="form-control" />
                     <span asp-validation-for="Username" class="text-danger"></span>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="col-8">
-                    <input asp-for="Password" placeholder="Enter password" class="form-control" />
+                    <input asp-for="Password" placeholder="Şifre" class="form-control" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
             </div>
@@ -40,7 +40,7 @@
 
             <div class="form-group row">
                 <div class="col-3 offset-8">
-                    <button type="button" onclick="Login();" class="btn btn-info form-control">Login</button>
+                    <button type="button" onclick="Login();" class="btn btn-info form-control">Giriş Yap</button>
                 </div>
             </div>
         </form>
