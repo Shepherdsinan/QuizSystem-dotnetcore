@@ -11,7 +11,7 @@ namespace QuizPortal.Proxies
     {
         public async Task<ICollection<ArticleDto>> GetLastFiveArticlesAsync()
         {
-            string url = "https://www.wired.com/feed/rss";
+            /*string url = "https://www.wired.com/feed/rss";
 
             XmlReader reader = XmlReader.Create(url);
             SyndicationFeed feed = SyndicationFeed.Load(reader);
@@ -28,6 +28,21 @@ namespace QuizPortal.Proxies
                 articleDto.ArticleId = item.Id;
                 articleDto.Title = item.Title.Text;
                 articleDto.Description = item.Summary.Text;
+
+                articleList.Add(articleDto);
+            }*/
+            
+
+            List<ArticleDto> articleList = new List<ArticleDto>();
+
+            for (int i = 1; i < 6; i++)
+            {
+
+                var articleDto = new ArticleDto();
+
+                articleDto.ArticleId = i.ToString();
+                articleDto.Title = "Test"+i;
+                articleDto.Description = "Test soruları "+i;
 
                 articleList.Add(articleDto);
             }
