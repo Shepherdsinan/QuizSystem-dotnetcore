@@ -137,7 +137,7 @@ function CompleteQuiz() {
         else {
             elemList[i].classList.add("btn-danger");
         }
-
+        document.getElementById("question+" + i + '+' + correctAnswer).classList.add("btn-success");
         elemList[i].classList.remove("btn-warning");
     }
 
